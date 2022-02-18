@@ -9,28 +9,37 @@ To develop a python control code to move the mobilerobot along the predefined pa
 
 ## Procedure
 
-Step1:
+## Step1:
+
+<br/> Use from robomaster import robot.
+
+## Step2:
+
+<br/>
+Choose the x,y,z - axis movement distance(meters).
+
+## Step3:
+
+<br/> Give ep_chassis.move to move straight.
+
+## Step4:
+ Give ep_chassis.move to move straight.
+
+## Step4: 
 
 <br/>
 
-Step2:
+Give time.sleep() for a break.
+## Step5:
 
-<br/>
-
-Step3:
-
-<br/>
-
-Step4:
-
-<br/>
-
-Step5:
+Give ep_chassis.drive_speed to have a circular movement
 
 <br/>
 
 ## Program
-```python
+```
+#developed by:ezhil mathi r 
+#reg no:212221230026
 from robomaster import robot
 import time
 
@@ -41,18 +50,59 @@ if __name__ == '__main__':
     ep_chassis = ep_robot.chassis
 
     ## Write your code here
+from robomaster import robot
+import time
 
+if _name_ == '_main_':
+    ep_robot = robot.Robot()
+    ep_robot.initialize(conn_type="ap")
 
+    ep_chassis = ep_robot.chassis
+    ep_led = ep_robot.led
 
-    
+    '''
+    x = x-axis movement distance,( meters) [-5,5]
+    y = y-axis movement distance,( meters) [-5,5]
+    z = rotation about z axis ( degree)[-180,180]
+    xy_speed = xy axis movement speed,( unit meter/second) [0.5,2]
+    '''
+    ep_led.set_led(comp="all",r=255,g=0,b=0,effect="on")
+
+    ep_chassis.move(x=4, y=0, z=0, xy_speed=1.5).wait_for_completed() 
+
+    ep_led.set_led(comp="all",r=0,g=255,b=0,effect="on")
+
+    ep_chassis.move(x=0, y=0, z=-90, xy_speed=0.75).wait_for_completed() 
+
+    ep_led.set_led(comp="all",r=0,g=0,b=255,effect="on")
+
+    ep_chassis.move(x=2, y=0, z=0, xy_speed=1.5).wait_for_completed()
+
+    ep_led.set_led(comp="all",r=0,g=255,b=0,effect="on")
+
+    ep_chassis.move(x=0, y=0, z=-90, xy_speed=0.75).wait_for_completed()
+
+    ep_led.set_led(comp="all",r=0,g=0,b=255,effect="on")
+
+    ep_chassis.move(x=4, y=0, z=0, xy_speed=1.5).wait_for_completed()
+
+    ep_led.set_led(comp="all",r=0,g=255,b=0,effect="on")
+
+    ep_chassis.move(x=0, y=0, z=-90, xy_speed=0.75).wait_for_completed()
+
+    ep_led.set_led(comp="all",r=255,g=0,b=0,effect="on")
+
+    ep_chassis.move(x=2, y=0, z=0, xy_speed=0.75).wait_for_completed()
+
     ep_robot.close()
 ```
 
 ## MobileRobot Movement Image:
 
 ![robo](./img/robomaster.png)
+![robo](r1.png)
 
-Insert image here
+
 
 
 <br/>
@@ -64,7 +114,8 @@ Insert image here
 
 Upload your video in Youtube and paste your video-id here
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+![MOBILE ROBOTICS](https://img.youtube.com/vi/MOBILE ROBOTICS/robo1.png)
+
 
 <br/>
 <br/>
